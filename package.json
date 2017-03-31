@@ -88,5 +88,13 @@
   "directories": {
     "test": "test"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harveytwo/hv-vue-component.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Harveytwo/hv-vue-component/issues"
+  },
+  "homepage": "https://github.com/Harveytwo/hv-vue-component#readme"
 }
