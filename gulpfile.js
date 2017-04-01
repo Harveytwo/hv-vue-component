@@ -6,7 +6,7 @@ gulp.task('default', function() {
 });
 
 gulp.task('taskES6', function(){
-    gulp.src('./src/packages/**/*.js')
+    gulp.src('./packages/**/*.js')
         .pipe(babel({
             presets: ['es2015']
         }))

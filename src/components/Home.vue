@@ -1,6 +1,13 @@
 <template>
   <div class="home">
     <h1>{{ msg }}</h1>
+    <button @click="aa">点击</button>
+
+    <el-alert
+      title="成功提示的文案"
+      type="success">
+    </el-alert>
+
     <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -21,13 +28,30 @@
 </template>
 
 <script>
+import Vue from 'vue'
+// import Toast from 'hv-vue-component/packages/alert/src/alert.vue'
+import Toast from 'hv-vue-component'
+// import Toast from '../../packages/main/index.js'
+// import Toast from '../../lib/build.js'
+Vue.use(Toast.Alert)
+
+// Vue.component(Toast.name, Toast);
 export default {
   name: 'home',
   data () {
     return {
       msg: 'Welcome to the Harvey\'s Vue2.0 components.'
     }
-  }
+  },
+  methods: {
+    aa() {
+      Toast.testToast({
+        message: '坑啊啊啊',
+        position: 'bottom'
+      })
+    }
+  },
+  // component: [ Toast ]
 }
 </script>
 
