@@ -4,8 +4,8 @@ var webpack = require('webpack')
 module.exports = {
   entry: './packages/main/index.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    path: path.resolve(__dirname, './lib'),
+    publicPath: '/lib/',
     filename: 'index.js'
   },
   module: {

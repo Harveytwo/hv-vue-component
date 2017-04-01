@@ -4,6 +4,7 @@ config/
 src/
 test/
 dist/
+docs/
 static/
 .babelrc
 .editorconfig

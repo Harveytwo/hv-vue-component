@@ -3,18 +3,17 @@
   "version": "1.0.3",
   "description": "This is the harvey's vue2.0 components.",
   "author": "harvey",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
-    "prepublish": "webpack",
     "hv": "webpack",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e"
   },
   "dependencies": {
-    "hv-vue-component": "^1.0.2",
+    "hv-vue-component": "^1.0.3",
     "vue": "^2.2.2"
   },
   "devDependencies": {

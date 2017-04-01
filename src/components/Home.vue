@@ -3,10 +3,10 @@
     <h1>{{ msg }}</h1>
     <button @click="aa">点击</button>
 
-    <el-alert
+    <!-- <el-alert
       title="成功提示的文案"
       type="success">
-    </el-alert>
+    </el-alert> -->
 
     <h2></h2>
     <ul>
@@ -30,7 +30,8 @@
 <script>
 import Vue from 'vue'
 import Toast from 'hv-vue-component'
-// console.log(Toast)
+// var Toast = require('hv-vue-component')
+console.log(Toast)
 
 Vue.use(Toast.Alert)
 
