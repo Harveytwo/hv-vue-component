@@ -3,7 +3,7 @@ build/
 config/
 src/
 test/
-lib/
+dist/
 static/
 .babelrc
 .editorconfig

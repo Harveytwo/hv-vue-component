@@ -30,6 +30,7 @@
 <script>
 import Vue from 'vue'
 import Toast from 'hv-vue-component'
+// console.log(Toast)
 
 Vue.use(Toast.Alert)
 
