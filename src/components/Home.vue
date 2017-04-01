@@ -1,14 +1,14 @@
 <template>
   <div class="home">
     <h1>{{ msg }}</h1>
-    <button @click="aa">点击</button>
+    <!-- <button @click="aa">点击</button>
 
     <el-alert
       title="成功提示的文案"
       type="success">
     </el-alert>
-
-    <h2>Essential Links</h2>
+ -->
+    <h2></h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
@@ -29,24 +29,22 @@
 
 <script>
 import Vue from 'vue'
-// import Toast from 'hv-vue-component/packages/alert/src/alert.vue'
 import Toast from 'hv-vue-component'
-// import Toast from '../../packages/main/index.js'
-// import Toast from '../../lib/build.js'
+
 Vue.use(Toast.Alert)
 
-// Vue.component(Toast.name, Toast);
 export default {
   name: 'home',
   data () {
     return {
-      msg: 'Welcome to the Harvey\'s Vue2.0 components.'
+      msg: 'Welcome to the Harvey\'s Vue2.0 components.',
+
     }
   },
   methods: {
     aa() {
       Toast.testToast({
-        message: '坑啊啊啊',
+        message: '肯啊啊啊啊啊啊啊啊 啊',
         position: 'bottom'
       })
     }
@@ -57,21 +55,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
