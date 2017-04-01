@@ -44,7 +44,7 @@ export default {
   methods: {
     aa() {
       Toast.testToast({
-        message: '肯啊啊啊啊啊啊啊啊 啊',
+        message: '肯啊啊啊啊 啊!!还是hen肯 啊啊 啊 ',
         position: 'bottom'
       })
     }
