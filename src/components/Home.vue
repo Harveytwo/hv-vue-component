@@ -1,13 +1,13 @@
 <template>
   <div class="home">
     <h1>{{ msg }}</h1>
-    <!-- <button @click="aa">点击</button>
+    <button @click="aa">点击</button>
 
     <el-alert
       title="成功提示的文案"
       type="success">
     </el-alert>
- -->
+
     <h2></h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -48,8 +48,7 @@ export default {
         position: 'bottom'
       })
     }
-  },
-  // component: [ Toast ]
+  }
 }
 </script>
 
