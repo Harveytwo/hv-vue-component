@@ -1,6 +1,6 @@
 {
   "name": "hv-vue-component",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is the harvey's vue2.0 components.",
   "author": "harvey",
   "main": "dist/index.js",
