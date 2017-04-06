@@ -1,70 +1,48 @@
 var path = require('path')
+var fs = require('fs')
 var webpack = require('webpack')
+var mkdirp = require('mkdirp')
+require('shelljs/global')
+function clearDist() {
+  var distPath = path.resolve(__dirname, '../lib/')
+  mkdirp(distPath,function () {
+  })
+  rm('-rf', distPath)
+}
+clearDist()
+function genComponents () {
+  var p = path.resolve(__dirname, '../src/packages/')
 
-module.exports = {
-  entry: '../packages/main/index.js',
-  output: {
-    path: path.resolve(__dirname, './lib'),
-    publicPath: '/lib/',
-    filename: 'build.js'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-          }
-          // other vue-loader options go here
-        }
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]?[hash]'
-        }
-      }
-    ]
-  },
-  resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+  fs.readdir(p, function (err, files) {
+    if (err) {
+      throw err
     }
-  },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true
-  },
-  performance: {
-    hints: false
-  },
-  devtool: '#eval-source-map'
+    files.filter(function (file) {
+      return fs.statSync(path.join(p, file)).isDirectory()
+    }).forEach(function (file) {
+      buildComponents(file)
+    })
+  })
+}
+function buildComponents(name) {
+  let file = path.join(__dirname, `../src/packages/${name}/index`)
+  let _config = require('./webpack.base.conf')
+  _config.entry = {}
+  _config.entry[name] = file
+  _config.output.filename = 'index.js'
+  _config.output.libraryTarget = 'umd'
+  _config.output.library = 'vui' + name
+  _config.output.path = path.resolve(__dirname, '../lib/packages/' + name.toLowerCase() + '/')
+
+  touchDir(_config.output.path)
+
+  webpack(_config, function () {
+  })
+}
+genComponents()
+
+function touchDir(filePath) {
+  mkdirp(filePath, function () {
+  })
 }
 
-if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
-  ])
-}

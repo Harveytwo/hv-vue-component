@@ -2,11 +2,13 @@
   <div class="home">
     <h1>{{ msg }}</h1>
     <button @click="aa">点击</button>
+    <button @click="aa">点击</button>
+    <button @click="aa">点击</button>
 
-    <!-- <el-alert
+    <el-alert
       title="成功提示的文案"
       type="success">
-    </el-alert> -->
+    </el-alert>
 
     <h2></h2>
     <ul>
@@ -29,11 +31,17 @@
 
 <script>
 import Vue from 'vue'
-import Toast from 'hv-vue-component'
+import {Alert, Toast, testToast} from 'hv-vue-component'
+// import {Alert, testToast} from '../../lib/packages/main/index.js'
+// import Toast from '../../lib/index.js'
 // var Toast = require('hv-vue-component')
-console.log(Toast)
-
-Vue.use(Toast.Alert)
+console.log(Alert)
+// import aa from 'vueui-m/src/components/Alert/index'
+// import {Tab, MButton} from 'vueui-m'
+// console.log(Tab)
+// console.log(MButton)
+Vue.use(Alert)
+// Vue.use(Toast.Alert)
 
 export default {
   name: 'home',
@@ -44,8 +52,8 @@ export default {
     }
   },
   methods: {
-    aa() {
-      Toast.testToast({
+    aa: function() {
+      testToast({
         message: '肯啊啊啊啊 啊!!还是hen肯 啊啊 啊 ',
         position: 'bottom'
       })
@@ -56,5 +64,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  ul {
+    /*transform: translateX(60px) rotate(70deg);*/
+  }
 </style>
