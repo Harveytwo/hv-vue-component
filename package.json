@@ -3,11 +3,12 @@
   "version": "1.0.5",
   "description": "This is the harvey's vue2.0 components.",
   "author": "harvey",
-  "main": "lib/index.js",
+  "main": "lib/packages/main/index.js",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "hv": "node build/build-npm.js && gulp",
+    "prepublish": "node build/build-npm.js && gulp",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e"

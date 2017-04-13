@@ -8,6 +8,8 @@ static/
 .babelrc
 .editorconfig
 .gitignore
+.npmignore
+npm-debug.log
 .postcssrc.js
 gulpfile.js
 index.html
